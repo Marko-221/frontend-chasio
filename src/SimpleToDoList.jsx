@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css'; // Anda bisa tambahkan styling dasar di App.css
+import './App.css'; 
 
-// URL API Backend kita
-// Ini sesuai dengan port 'backend' yang kita ekspos di docker-compose.yml
+// URL API Backend kita yang sesuai dengan port 'backend' yang kita ekspos di docker-compose.yml
 const API_URL = 'http://localhost:3000/api/tasks';
 
 function App() {
