@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css'; 
+
 //Note: JANGAN RENAME -Marco
 //Tes commit -Xavier
+//Sudah di update - Hugo
+
 // URL API Backend kita yang sesuai dengan port 'backend' yang kita ekspos di docker-compose.yml
 const API_URL = 'http://localhost:3000/api/tasks';
 
@@ -10,7 +13,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [newTaskName, setNewTaskName] = useState('');
 
-  // 1. Fungsi untuk mengambil semua task
+  // 1. Fungsi untuk mengambil semua task dari API
   const fetchTasks = async () => {
     try {
       const response = await axios.get(API_URL);
@@ -32,14 +35,14 @@ function App() {
 
     try {
       await axios.post(API_URL, { task_name: newTaskName });
-      setNewTaskName(''); // Kosongkan input
+      setNewTaskName(''); // Kosongkan input setelah selesai
       fetchTasks(); // Ambil ulang data task (termasuk yang baru)
     } catch (error) {
       console.error('Error adding task:', error);
     }
   };
 
-  // 3. Fungsi untuk update status (toggle is_done)
+  // 3. Fungsi untuk update status (is_done)
   const handleToggleTask = async (id) => {
     try {
       await axios.put(`${API_URL}/${id}`);
@@ -53,7 +56,7 @@ function App() {
   const handleDeleteTask = async (id) => {
     try {
       await axios.delete(`${API_URL}/${id}`);
-      fetchTasks(); // Ambil ulang data
+      fetchTasks(); // Ambil ulang data setelah menghapus task 
     } catch (error) {
       console.error('Error deleting task:', error);
     }
