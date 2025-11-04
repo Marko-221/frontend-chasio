@@ -5,8 +5,8 @@ import './App.css';
 //Note: JANGAN RENAME -Marco
 //Tes commit -Xavier
 //Sudah di update - Hugo
+// Test Update - Valentino
 
-// URL API Backend kita yang sesuai dengan port 'backend' yang kita ekspos di docker-compose.yml
 const API_URL = 'http://localhost:3000/api/tasks';
 
 function App() {
@@ -64,7 +64,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Simple To Do List</h1>
+      <h1>Simple To Do List (CRUD)</h1>
 
       {/* Form untuk menambah task baru */}
       <form onSubmit={handleAddTask}>
