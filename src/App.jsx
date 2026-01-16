@@ -64,7 +64,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Simple To Do List TEST (CRUD)</h1>
+      <h1>Simple To Do List V2 (CRUD)</h1>
 
       {/* Form untuk menambah task baru */}
       <form onSubmit={handleAddTask}>
