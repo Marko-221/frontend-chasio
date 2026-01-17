@@ -15,6 +15,6 @@ jobs:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build image
-        run: docker build -t karadaval/fe-app:v4 .
+        run: docker build -t karadaval/fe-app:v5 .
       - name: Push image
-        run: docker push karadaval/fe-app:v4
+        run: docker push karadaval/fe-app:v5
